@@ -1,0 +1,277 @@
+@font-face {
+  font-family: '汉仪PP体简';
+  src: url(‘HYPPTiJ.ttf’)
+}
+
+* {
+  font-family: "汉仪PP体简", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  padding: 0;
+  margin: 0
+}
+
+html {
+  font-size: 62.5%
+}
+
+p {
+  font-size: 1.5rem
+}
+
+h2, strong {
+  color: white
+}
+
+body {
+  min-width: 320px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  background-image: url(img/lu.png);
+  background-repeat: repeat;
+  background-attachment: fixed;
+  background-color: #e9f6df;
+  -webkit-text-size-adjust: none
+}
+
+div .box-top {
+  height: 8.9rem;
+  background-color: #f04854;
+  padding-top: 0.9rem;
+  position: relative
+}
+
+div .box-topbottom {
+  height: 4.8rem;
+  background: rgba(255, 255, 255, 0.4)
+}
+
+div .letf, div .right {
+  width: 30%
+}
+
+div .left {
+  float: left;
+  position: absolute;
+  left: 10%;
+  top: 17%
+}
+
+div .right {
+  float: right;
+  position: absolute;
+  right: 0.8rem;
+  top: 0
+}
+
+div .button {
+  float: middle;
+  position: absolute;
+  left: 47%;
+  bottom: 0
+}
+
+div .ui-mask {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  position: absolute;
+  top: 0px;
+  height: 0px;
+  z-index: 8000;
+  opacity: 0.4;
+  filter: Alpha(opacity=40)
+}
+
+div .click {
+  float: middle;
+  position: absolute;
+  left: 55%;
+  bottom: 2.4rem
+}
+
+.ui-dialog {
+  width: 90%;
+  height: auto;
+  display: none;
+  position: absolute;
+  z-index: 9000;
+  top: 0px;
+  left: 0px;
+  border: 1px solid #D5D5D5;
+  background: #f5f6e4;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  border-radius: 20px;
+}
+
+.ui-dialog a {
+  text-decoration: none
+}
+
+
+}
+
+.ui-dialog-content {
+  padding: 0.75rem 0.5rem;
+  width: 19rem;
+  height: 33rem;
+  overflow: hidden
+}
+
+.ui-dialog-pt15 {
+  padding-top: 0.75rem
+}
+
+.ui-dialog-pt1 {
+  background-color: #f6baae
+}
+
+.ui-dialog-pt2 {
+  background-color: #f8cdc5
+}
+
+.ui-dialog-input {
+  width: 85%;
+  height: 2rem;
+  margin: 0px;
+  padding: 0px;
+  border: 0 solid;
+  font-size: 1.8rem;
+  color: #a37434;
+  text-indent: 1.2rem;
+  outline: none
+}
+
+.ui-dialog-input-name {
+  background-color: #f6baae
+}
+
+.ui-dialog-input-say {
+  background-color: #f8cdc5
+}
+
+.ui-dialog-img {
+  padding-top: 3.7rem;
+  padding-right: 0.8rem;
+  float: right
+}
+
+.ui-dialog-input-say {
+  height: 15rem
+}
+
+.float {
+  float: left;
+  padding-left: 1.7rem;
+  width: 20rem
+}
+
+.note {
+  background-color: #f6baae;
+  width: 90%;
+  height: 17.5rem;
+  min-height: 30%;
+  position: relative;
+  margin: 5% auto;
+  box-shadow: 5px 5px 5px #c0c7b0
+}
+
+.note-photo {
+  position: absolute;
+  left: 1rem;
+  top: 1rem
+}
+
+.note-tip {
+  position: absolute;
+  left: 10%;
+  bottom: 10%
+}
+
+.note-tip > span {
+  position: absolute;
+  left: 42%;
+  bottom: 40%;
+}
+
+.note-ht {
+  position: absolute;
+  left:20%;
+}
+
+.note-hb {
+  position: absolute;
+  right: 4rem;
+  bottom: 0.5rem
+}
+
+.note-hm {
+  position: absolute;
+  left: 9rem;
+  top: 1.7rem;
+  width: 17.5rem;
+  height: 15rem;
+  text-align: left;
+  padding-top: 0.5rem;
+  padding-right: 0.5rem
+}
+
+.note-hm>p {
+  overflow: hidden
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  width: auto
+}
+
+img#num {
+  height: 4.2rem;
+  width: 14.35rem
+}
+
+#img_heart {
+  height: 3.45rem;
+  width: 3.45rem
+}
+
+#img_boy1, #img_boy2 {
+  width: 6.55rem;
+  height: 9rem
+}
+
+#img_girl {
+  height: 9.2rem;
+  width: 4.5rem
+}
+
+#send {
+  width: 4rem;
+  height: 12rem
+}
+
+#content {
+  resize: none;
+}
+
+.note-tip {
+  width: 50px;
+  height: 44px;
+}
+
+.note-tip > span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: 45px;
+  background: url(../img/boom.png) no-repeat;
+}
+
+.note-hm {
+  word-wrap: break-word;
+  word-break: normal;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!--[if lt IE 9]> <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script> <![endif]-->
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="shortcut icon" href="images/ico.ico">
+    <title>双十一发言墙</title>
+  </head>
+  <body>
+    <div class="ui-dialog" id="dialogMove">
+      <div class="ui-dialog-content">
+        <div class="float">
+          <div class="ui-dialog-l40 ui-dialog-pt15 ui-dialog-pt1">
+            <strong>TO</strong><input name="to" id="to" class="ui-dialog-input ui-dialog-input-name" type="input"  />
+          </div>
+          <div class="ui-dialog-l40 ui-dialog-pt15 ui-dialog-pt2">
+            <textarea name="content" id="content" class="ui-dialog-input ui-dialog-input-say" type="input" ></textarea>
+          </div>
+          <div class="ui-dialog-l40 ui-dialog-pt15 ui-dialog-pt1">
+            <strong>FROM</strong><input name="from" id="from" class="ui-dialog-input ui-dialog-input-name" type="input"  />
+          </div>
+        </div>
+        <div class="ui-dialog-l40 ui-dialog-img">
+          <input id='send' type="image" name="submit" src="img/send.png" />
+        </div>
+      </div>
+    </div>
+    <div class="header">
+      <div class="box-top">
+        <img src="img/top.png" id="num">
+        <div class="box-topbottom"></div>
+        <div class="left"><img src="img/boy.png" id="img_boy1"></div>
+        <div class="right"><img src="img/girl.png" id="img_girl"></div>
+        <div class="button"><a href="javascript:showDialog();">
+          <input type="image" src="img/heart.png"  id="img_heart"></a>
+        </div>
+        <div class="ui-mask" id="mask" onclick="javascript:hideDialog();"></div>
+        <div class="click"><img src="img/tip.png"><img src="img/click.png"></div>
+      </div>
+    </div>
+    <!-- <div class="note">
+      <div class="note-photo"><img src="img/boy.png" id="img_boy2"></div>
+      <div class="note-tip"><img src="img/boom.png" onclick="javascript:nice(this);"><span>10</span></div>
+      <div id="show" class="note-message">
+        <h2 class="note-ht">TO     收件人</h2>
+        <div class="note-hm"><p>这是表白这是表白这是表白这是表白这是表白这是表白这是表白这是表白这是表白这是表白这是表白这是表白的人过热时更换人同时跟后天放任何的非官方的规划通过后天然后给他人</p></div>
+        <h2 class="note-hb">FROM     发送人</h2>
+      </div>
+    </div> -->
+        <!-- <div class="show"><p>dawdw</p><span>awd</span><span></span><button id="n-3" class="nice" type="button" onclick="nice(this);">赞3</button><span>3</span></div> -->
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
