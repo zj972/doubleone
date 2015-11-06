@@ -27,24 +27,25 @@ body {
   padding: 0;
   margin: 0;
   text-align: center;
-  background-image: url(../img/lu.png);
+  /*background: url(../img/lu.png);*/
   background-repeat: repeat;
   background-attachment: fixed;
   background-color: #e9f6df;
-  -webkit-text-size-adjust: none
+  -webkit-text-size-adjust: none;
 }
 
 div .box-top {
   height: 8.9rem;
-  /*background-color: #f04854;*/
-  background-color:rgba(240,72,84,.87);
+  background: url(../img/lu_white.png);
+  background-color: #f04854;
+  /*background-color:rgba(240,72,84,.87);*/
   padding-top: 0.9rem;
   position: relative
 }
 
 div .box-topbottom {
   height: 4.8rem;
-  /*background: rgba(255, 255, 255, 0.4)*/
+  background: rgba(255, 255, 255, 0.4)
 }
 
 div .letf, div .right {
@@ -54,14 +55,14 @@ div .letf, div .right {
 div .left {
   float: left;
   position: absolute;
-  left: 10%;
+  left: 7%;
   top: 17%
 }
 
 div .right {
   float: right;
   position: absolute;
-  right: 0.8rem;
+  right: 0;
   top: 0
 }
 
@@ -167,7 +168,7 @@ div .click {
 .float {
   float: left;
   padding-left: 1.7rem;
-  width: 20rem
+  width: 24rem
 }
 
 .note {
@@ -177,7 +178,12 @@ div .click {
   min-height: 30%;
   position: relative;
   margin: 5% auto;
-  box-shadow: 5px 5px 5px #c0c7b0
+  -webkit-box-shadow: 10px 10px 10px #c0c7b0;
+  -moz-box-shadow: 10px 10px 10px #c0c7b0;
+  -ms-box-shadow: 10px 10px 10px #c0c7b0;
+  -o-box-shadow: 10px 10px 10px #c0c7b0;
+  box-shadow: 10px 10px 10px #c0c7b0;
+  z-index: 2;
 }
 
 .note-photo {
@@ -188,8 +194,8 @@ div .click {
 
 .note-tip {
   position: absolute;
-  left: 10%;
-  bottom: 10%
+  left: 2%;
+  bottom: 2%
 }
 
 .note-tip > span {
@@ -200,7 +206,7 @@ div .click {
 
 .note-ht {
   position: absolute;
-  left:20%;
+  left:25%;
 }
 
 .note-hb {
@@ -224,11 +230,11 @@ div .click {
   overflow: hidden
 }
 
-img {
+/*img {
   max-width: 100%;
   height: auto;
   width: auto
-}
+}*/
 
 img#num {
   height: 4.2rem;
@@ -275,4 +281,26 @@ img#num {
 .note-hm {
   word-wrap: break-word;
   word-break: normal;
+}
+
+.note-message{
+  line-height: 3em;
+}
+
+#img_one{
+  width: 21.75px;
+  height: 16px;
+}
+
+#img_two{
+  width: 65.25px;
+  height: 17px;
+}
+.bg{
+  position: absolute;
+  background: url(../img/lu.png);
+  width: 100%;
+  height: 100%;
+  top: 200px;
+  z-index: 1;
 }
