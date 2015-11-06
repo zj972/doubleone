@@ -27,7 +27,7 @@ body {
   padding: 0;
   margin: 0;
   text-align: center;
-  background-image: url(img/lu.png);
+  background-image: url(../img/lu.png);
   background-repeat: repeat;
   background-attachment: fixed;
   background-color: #e9f6df;
@@ -36,14 +36,15 @@ body {
 
 div .box-top {
   height: 8.9rem;
-  background-color: #f04854;
+  /*background-color: #f04854;*/
+  background-color:rgba(240,72,84,.65);
   padding-top: 0.9rem;
   position: relative
 }
 
 div .box-topbottom {
   height: 4.8rem;
-  background: rgba(255, 255, 255, 0.4)
+  /*background: rgba(255, 255, 255, 0.4)*/
 }
 
 div .letf, div .right {
