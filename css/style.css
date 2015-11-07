@@ -128,7 +128,8 @@ div .click {
 }
 
 .ui-dialog-pt1 {
-  background-color: #f6baae
+  background-color: #f6baae;
+  line-height: 2rem;
 }
 
 .ui-dialog-pt2 {
