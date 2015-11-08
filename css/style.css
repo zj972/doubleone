@@ -1,10 +1,10 @@
 @font-face {
   font-family: '汉仪PP体简';
-  src: url(‘HYPPTiJ.ttf’)
+  src: url('HYPPTiJ.ttf');
 }
 
 * {
-  font-family: "汉仪PP体简", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  font-family: "汉仪PP体简";
   padding: 0;
   margin: 0
 }
