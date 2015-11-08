@@ -221,16 +221,22 @@ div .click {
   left: 9rem;
   top: 1.7rem;
   width: 17.5rem;
-  height: 15rem;
+  height: 11rem;
   text-align: left;
+  margin-top: 1rem;
   padding-top: 0.5rem;
-  padding-right: 0.5rem
+  padding-right: 0.5rem;
+  background: rgba(255,255,255,0);
+  border: 0;
+  resize: none;
+  color:#a37434;
 }
 
+/*
 .note-hm>p {
   overflow: hidden
 }
-
+*/
 /*img {
   max-width: 100%;
   height: auto;

@@ -18,9 +18,9 @@ function show(data) {
   for (var i = data.length - 1; i >= 0; i--) {
     data[i]
     if (data[i].id % 2 == 0) {
-      $('.header').after("<div class='note'><div class='note-photo'><img src='img/girl.png' id='img_girl'></div><div class='note-tip'><span id='n-" + data[i].id + "'  onclick='javascript:nice(this);'>" + data[i].nice + "</span></div><div id='show' class='note-message'><h2 class='note-ht'>TO     " + data[i].to + "</h2><div class='note-hm'>" + data[i].content + "</div><h2 class='note-hb'>FROM     " + data[i].from + "</h2></div></div>");
+      $('.header').after("<div class='note'><div class='note-photo'><img src='img/girl.png' id='img_girl'></div><div class='note-tip'><span id='n-" + data[i].id + "'  onclick='javascript:nice(this);'>" + data[i].nice + "</span></div><div id='show' class='note-message'><h2 class='note-ht'>TO     " + data[i].to + "</h2><textarea disabled='disabled' class='note-hm'>" + data[i].content + "</textarea><h2 class='note-hb'>FROM     " + data[i].from + "</h2></div></div>");
     } else {
-      $('.header').after("<div class='note'><div class='note-photo'><img src='img/boy2.png' id='img_boy2'></div><div class='note-tip'><span id='n-" + data[i].id + "'  onclick='javascript:nice(this);'>" + data[i].nice + "</span></div><div id='show' class='note-message'><h2 class='note-ht'>TO     " + data[i].to + "</h2><div class='note-hm'>" + data[i].content + "</div><h2 class='note-hb'>FROM     " + data[i].from + "</h2></div></div>");
+      $('.header').after("<div class='note'><div class='note-photo'><img src='img/boy2.png' id='img_boy2'></div><div class='note-tip'><span id='n-" + data[i].id + "'  onclick='javascript:nice(this);'>" + data[i].nice + "</span></div><div id='show' class='note-message'><h2 class='note-ht'>TO     " + data[i].to + "</h2><textarea disabled='disabled' class='note-hm'>" + data[i].content + "</textarea><h2 class='note-hb'>FROM     " + data[i].from + "</h2></div></div>");
     }
     //$('#header').after("<div class='show'><p>"+data[i].content+"</p><span>"+data[i].from+"</span><span>"+data[i].to+"</span><button id='n-"+data[i].id+"' class='nice' type='button' onclick='nice(this)';>赞</button><span>"+data[i].nice+"</span></div>")
   }
@@ -65,9 +65,9 @@ $(document).ready(function() {
 
 function echo(id) {
   if (id % 2 == 0) {
-    $('.header').after("<div class='note'><div class='note-photo'><img src='img/girl.png' id='img_girl'></div><div class='note-tip'><span id='n-" + id + "'  onclick='javascript:nice(this);'>0</span></div><div id='show' class='note-message'><h2 class='note-ht'>TO     " + $("#to").val() + "</h2><div class='note-hm'>" + $("#content").val() + "</div><h2 class='note-hb'>FROM     " + $("#from").val() + "</h2></div></div>");
+    $('.header').after("<div class='note'><div class='note-photo'><img src='img/girl.png' id='img_girl'></div><div class='note-tip'><span id='n-" + id + "'  onclick='javascript:nice(this);'>0</span></div><div id='show' class='note-message'><h2 class='note-ht'>TO     " + $("#to").val() + "</h2><textarea disabled='disabled' class='note-hm'>" + $("#content").val() + "</textarea><h2 class='note-hb'>FROM     " + $("#from").val() + "</h2></div></div>");
   } else {
-    $('.header').after("<div class='note'><div class='note-photo'><img src='img/boy2.png' id='img_boy2'></div><div class='note-tip'><span id='n-" + id + "'  onclick='javascript:nice(this);'>0</span></div><div id='show' class='note-message'><h2 class='note-ht'>TO     " + $("#to").val() + "</h2><div class='note-hm'>" + $("#content").val() + "</div><h2 class='note-hb'>FROM     " + $("#from").val() + "</h2></div></div>");
+    $('.header').after("<div class='note'><div class='note-photo'><img src='img/boy2.png' id='img_boy2'></div><div class='note-tip'><span id='n-" + id + "'  onclick='javascript:nice(this);'>0</span></div><div id='show' class='note-message'><h2 class='note-ht'>TO     " + $("#to").val() + "</h2><textarea disabled='disabled' class='note-hm'>" + $("#content").val() + "</textarea><h2 class='note-hb'>FROM     " + $("#from").val() + "</h2></div></div>");
     //$('#show').prepend("<div class='show'><p>"+$("#content").val()+"</p><span>"+$("#from").val()+"</span><span>"+$("#to").val()+"</span><button id='n-"+id+"' class='nice' type='button' onclick='nice(this)';>赞</button><span>0</span></div>")
   }
 }
@@ -209,6 +209,8 @@ function showDialog() {
   g('mask').style.display = 'block';
   autoCenter(g('dialogMove'));
   fillToBody(g('mask'));
+  // console.log($('body').height());
+  $('#mask').height($('body').height()+'px');
 }
 //  关闭对话框
 function hideDialog() {
@@ -217,3 +219,5 @@ function hideDialog() {
 }
 //  侦听浏览器窗口大小变化
 window.onresize = showDialog;
+
+textarea

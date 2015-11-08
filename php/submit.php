@@ -27,7 +27,7 @@
 		echo $json;
 	} else {
 		$json= array(
-				'success'=>'ture',
+				'success'=>'false',
 				'msg'=>'提交失败'
 		);
 		$json=json_encode($json);
