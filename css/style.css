@@ -5,6 +5,8 @@
 
 * {
   font-family: "汉仪PP体简";
+  /*font-family: "Microsoft YaHei";*/
+  -webkit-font-smoothing: antialiased;/*字体抗锯齿*/
   padding: 0;
   margin: 0
 }
@@ -169,7 +171,7 @@ div .click {
 .float {
   float: left;
   padding-left: 1.7rem;
-  width: 24rem
+  width: 70%;
 }
 
 .note {
@@ -229,6 +231,7 @@ div .click {
   background: rgba(255,255,255,0);
   border: 0;
   resize: none;
+  font-size: 2rem;
   color:#a37434;
 }
 
