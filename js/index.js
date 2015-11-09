@@ -3,7 +3,7 @@
 $(document).ready(function() {
   // $(document).html('<link rel="stylesheet" href="css/font.css"/>');
   $("head").append("<link>");
-  a =$("head").children(":last");
+  a = $("head").children(":last");
   a.attr({
     rel: "stylesheet",
     type: "text/css",
@@ -149,6 +149,48 @@ function can_nice(element) {
     },
   });
 }
+//分批次加载
+var stop = true;
+var times = 0;
+$(window).scroll(function() {
+  totalheight = parseFloat($(window).height()) + parseFloat($(window).scrollTop());
+  if ($(document).height() <= totalheight) {
+    if (stop == true) {
+      stop = false;
+      $.ajax({
+        type: "POST",
+        url: "./php/paging.php",
+        dataType: "json",
+        data: {
+          times: times
+        },
+        success: function(data) {
+          if(data.success){
+            stop = false;
+          }else{
+            showPaging(data);
+            stop = true;
+            times++;
+          }
+        },
+        error: function(errorThrown) {
+          alert("发生错误：" + "errorThrown:" + errorThrown);
+        },
+      });
+    }
+  }
+});
+function showPaging(data) {
+  for (var i = data.length - 1; i >= 0; i--) {
+    data[i]
+    if (data[i].id % 2 == 0) {
+      $('.bg').before("<div class='note'><div class='note-photo'><img src='img/girl.png' id='img_girl'></div><div class='note-tip'><span id='n-" + data[i].id + "'  onclick='javascript:nice(this);'>" + data[i].nice + "</span></div><div id='show' class='note-message'><h2 class='note-ht'>TO     " + data[i].to + "</h2><textarea disabled='disabled' class='note-hm'>" + data[i].content + "</textarea><h2 class='note-hb'>FROM     " + data[i].from + "</h2></div></div>");
+    } else {
+      $('.bg').before("<div class='note'><div class='note-photo'><img src='img/boy2.png' id='img_boy2'></div><div class='note-tip'><span id='n-" + data[i].id + "'  onclick='javascript:nice(this);'>" + data[i].nice + "</span></div><div id='show' class='note-message'><h2 class='note-ht'>TO     " + data[i].to + "</h2><textarea disabled='disabled' class='note-hm'>" + data[i].content + "</textarea><h2 class='note-hb'>FROM     " + data[i].from + "</h2></div></div>");
+    }
+    //$('#header').after("<div class='show'><p>"+data[i].content+"</p><span>"+data[i].from+"</span><span>"+data[i].to+"</span><button id='n-"+data[i].id+"' class='nice' type='button' onclick='nice(this)';>赞</button><span>"+data[i].nice+"</span></div>")
+  }
+}
 //前端
 var dialogInstace, onMoveStartId; //  用于记录当前可拖拽的对象
 // var zIndex = 9000;
@@ -218,7 +260,7 @@ function showDialog() {
   autoCenter(g('dialogMove'));
   fillToBody(g('mask'));
   // console.log($('body').height());
-  $('#mask').height($('body').height()+'px');
+  $('#mask').height($('body').height() + 'px');
 }
 //  关闭对话框
 function hideDialog() {
