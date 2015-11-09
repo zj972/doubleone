@@ -1,11 +1,5 @@
-@font-face {
-  font-family: '汉仪PP体简';
-  src: url('HYPPTiJ.ttf');
-}
-
 * {
-  font-family: "汉仪PP体简";
-  /*font-family: "Microsoft YaHei";*/
+  font-family: "汉仪PP体简","Microsoft YaHei";
   -webkit-font-smoothing: antialiased;/*字体抗锯齿*/
   padding: 0;
   margin: 0

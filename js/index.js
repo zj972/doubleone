@@ -1,6 +1,14 @@
 //展示
 //var show_data;
 $(document).ready(function() {
+  // $(document).html('<link rel="stylesheet" href="css/font.css"/>');
+  $("head").append("<link>");
+  a =$("head").children(":last");
+  a.attr({
+    rel: "stylesheet",
+    type: "text/css",
+    href: "css/font.css"
+  });
   $.ajax({
     type: "POST",
     url: "./php/show.php",
