@@ -38,9 +38,11 @@ function show(data) {
 var id = 0;
 $(document).ready(function() {
   $("#send").click(function() {
-    var content = $("#content").val();
-    var from = $("#from").val();
-    var to = $("#to").val();
+    //var content = $("#content").val();
+    var content = removeHTMLTag($("#content").val());
+    //console.log(content);
+    var from = removeHTMLTag($("#from").val());
+    var to = removeHTMLTag($("#to").val());
     $.ajax({
       type: "POST",
       url: "./php/submit.php",
@@ -74,9 +76,9 @@ $(document).ready(function() {
 
 function echo(id) {
   if (id % 2 == 0) {
-    $('.header').after("<div class='Note clearfix'><div class='fl'><div class='Note-photo'><img src='img/girl.png' id='img_girl'></div><div class='Note-tip'><span id='n-" + id + "'  onclick='javascript:nice(this);'>0</span></div></div><div id='show' class='note-message'><h2 class='Note-ht'>TO&nbsp;" + $("#to").val() + "</h2><div disabled='disabled' class='Note-hm'>" + $("#content").val() + "</div><h2 class='Note-hb'>FROM&nbsp;" + $("#from").val() + "</h2></div></div>");
+    $('.header').after("<div class='Note clearfix'><div class='fl'><div class='Note-photo'><img src='img/girl.png' id='img_girl'></div><div class='Note-tip'><span id='n-" + id + "'  onclick='javascript:nice(this);'>0</span></div></div><div id='show' class='note-message'><h2 class='Note-ht'>TO&nbsp;" + removeHTMLTag($("#to").val()) + "</h2><div disabled='disabled' class='Note-hm'>" + removeHTMLTag($("#content").val()) + "</div><h2 class='Note-hb'>FROM&nbsp;" + removeHTMLTag($("#from").val()) + "</h2></div></div>");
   } else {
-    $('.header').after("<div class='Note clearfix'><div class='fl'><div class='Note-photo'><img src='img/boy2.png' id='img_boy2'></div><div class='Note-tip'><span id='n-" + id + "'  onclick='javascript:nice(this);'>0</span></div></div><div id='show' class='note-message'><h2 class='Note-ht'>TO&nbsp;" + $("#to").val() + "</h2><div disabled='disabled' class='Note-hm'>" + $("#content").val() + "</div><h2 class='Note-hb'>FROM&nbsp;" + $("#from").val() + "</h2></div></div>");
+    $('.header').after("<div class='Note clearfix'><div class='fl'><div class='Note-photo'><img src='img/boy2.png' id='img_boy2'></div><div class='Note-tip'><span id='n-" + id + "'  onclick='javascript:nice(this);'>0</span></div></div><div id='show' class='note-message'><h2 class='Note-ht'>TO&nbsp;" + removeHTMLTag($("#to").val()) + "</h2><div disabled='disabled' class='Note-hm'>" + removeHTMLTag($("#content").val()) + "</div><h2 class='Note-hb'>FROM&nbsp;" + removeHTMLTag($("#from").val()) + "</h2></div></div>");
     //$('#show').prepend("<div class='show'><p>"+$("#content").val()+"</p><span>"+$("#from").val()+"</span><span>"+$("#to").val()+"</span><button id='n-"+id+"' class='nice' type='button' onclick='nice(this)';>赞</button><span>0</span></div>")
   }
 }
@@ -200,7 +202,7 @@ function showPaging(data) {
 //前端
 var dialogInstace, onMoveStartId; //  用于记录当前可拖拽的对象
 // var zIndex = 9000;
-//  获取元素对象  
+//  获取元素对象
 function g(id) {
   return document.getElementById(id);
 }
@@ -277,3 +279,14 @@ function hideDialog() {
 }
 //  侦听浏览器窗口大小变化
 window.onresize = showDialog;
+
+function removeHTMLTag(str) {
+            str = str.replace(/<\/?[^>]*>/g,''); //去除HTML tag
+            str = str.replace(/[ | ]*\n/g,'\n'); //去除行尾空白
+            //str = str.replace(/\n[\s| | ]*\r/g,'\n'); //去除多余空行
+            str=str.replace(/&nbsp;/ig,'');//去掉&nbsp;
+            return str;
+    }
+
+
+
