@@ -1,5 +1,5 @@
-* {
-  font-family: "汉仪PP体简","Microsoft YaHei";
+* {/*"汉仪PP体简",*/
+  font-family: "Microsoft YaHei";
   -webkit-font-smoothing: antialiased;/*字体抗锯齿*/
   padding: 0;
   margin: 0
@@ -128,7 +128,7 @@ div .click {
 }
 
 .ui-dialog-input {
-  width: 85%;
+  width: 79%;
   height: 2rem;
   margin: 0px;
   padding: 0px;
@@ -248,7 +248,7 @@ img#num {
 }
 
 .Note-tip > span {
-  font-size: 2rem;
+  font-size: 1.5rem;
   display: inline-block;
   width: 50px;
   line-height: 45px;
@@ -279,4 +279,11 @@ img#num {
   font-size: 2rem;
   color:#663333;
   word-wrap:break-word;
+}
+.loading{
+  height: 60px;
+  text-align: center;
+  margin-top: 40px;
+  font-size: 2rem;
+  color:#663333;
 }

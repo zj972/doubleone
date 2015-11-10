@@ -6,7 +6,7 @@
 	if(!isset($_POST["content"])||empty($_POST["content"])||!isset($_POST["from"])||empty($_POST["from"])||!isset($_POST["to"])||empty($_POST["to"])){
 		$json= array(
     		'success'=>'false',
-    		'msg'=>'参数错误，内容不能为空'
+    		'msg'=>'记得填全一点哦~'
 		);
 		$json=json_encode($json);
 		echo $json;

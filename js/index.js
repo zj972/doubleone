@@ -2,22 +2,23 @@
 //var show_data;
 $(document).ready(function() {
   // $(document).html('<link rel="stylesheet" href="css/font.css"/>');
-  $("head").append("<link>");
-  a = $("head").children(":last");
-  a.attr({
-    rel: "stylesheet",
-    type: "text/css",
-    href: "css/font.css"
-  });
+  // $("head").append("<link>");
+  // a = $("head").children(":last");
+  // a.attr({
+  //   rel: "stylesheet",
+  //   type: "text/css",
+  //   href: "css/font.css"
+  // });
   $.ajax({
     type: "POST",
     url: "./php/show.php",
     dataType: "json",
     success: function(data) {
       show(data);
+      $('.bg').css("height",$(document).height()-200);
     },
     error: function(errorThrown) {
-      alert("发生错误：" + "errorThrown:" + errorThrown);
+      alert("亲，请刷新下页面");
     },
   });
 })
@@ -61,11 +62,11 @@ $(document).ready(function() {
           hideDialog();
           //window.location.reload();
         } else {
-          alert("出现错误：" + data.msg);
+          alert(data.msg);
         }
       },
-      error: function(errorThrown) {
-        alert("发生错误：" + "errorThrown:" + errorThrown);
+      error: function() {
+        alert("亲，请刷新下页面");
       },
     });
   });
@@ -106,11 +107,11 @@ function nice(element) {
       if (data.success == "ture") {
         //alert(data.msg);
       } else {
-        alert("出现错误：" + data.msg);
+        alert("亲，请刷新下页面");
       }
     },
     error: function(errorThrown) {
-      alert("发生错误：" + "errorThrown:" + errorThrown);
+      alert("亲，请刷新下页面");
     },
   });
 }
@@ -141,11 +142,11 @@ function can_nice(element) {
       if (data.success == "ture") {
         //alert(data.msg);
       } else {
-        alert("出现错误：" + data.msg);
+        alert("亲，请刷新下页面");
       }
     },
     error: function(errorThrown) {
-      alert("发生错误：" + "errorThrown:" + errorThrown);
+      alert("亲，请刷新下页面");
     },
   });
 }
@@ -156,6 +157,7 @@ $(window).scroll(function() {
   totalheight = parseFloat($(window).height()) + parseFloat($(window).scrollTop());
   if ($(document).height() <= totalheight) {
     if (stop == true) {
+      $('.loading').css("display","none");
       stop = false;
       $.ajax({
         type: "POST",
@@ -167,14 +169,18 @@ $(window).scroll(function() {
         success: function(data) {
           if(data.success){
             stop = false;
+            $('.loading').html('END~');
+            $('.loading').css("display","block");
           }else{
             showPaging(data);
+            $('.loading').css("display","block");
+            $('.bg').css("height",$(document).height()-200);
             stop = true;
             times++;
           }
         },
         error: function(errorThrown) {
-          alert("发生错误：" + "errorThrown:" + errorThrown);
+          alert("亲，请刷新下页面");
         },
       });
     }
@@ -184,9 +190,9 @@ function showPaging(data) {
   for (var i = data.length - 1; i >= 0; i--) {
     data[i]
     if (data[i].id % 2 == 0) {
-      $('.bg').before("<div class='Note clearfix'><div class='fl'><div class='Note-photo'><img src='img/girl.png' id='img_girl'></div><div class='Note-tip'><span id='n-" + data[i].id + "'  onclick='javascript:nice(this);'>" + data[i].nice + "</span></div></div><div id='show' class='note-message'><h2 class='Note-ht'>TO&nbsp;" + data[i].to + "</h2><div disabled='disabled' class='Note-hm'>" + data[i].content + "</div><h2 class='Note-hb'>FROM&nbsp;" + data[i].from + "</h2></div></div>");
+      $('.loading').before("<div class='Note clearfix'><div class='fl'><div class='Note-photo'><img src='img/girl.png' id='img_girl'></div><div class='Note-tip'><span id='n-" + data[i].id + "'  onclick='javascript:nice(this);'>" + data[i].nice + "</span></div></div><div id='show' class='note-message'><h2 class='Note-ht'>TO&nbsp;" + data[i].to + "</h2><div disabled='disabled' class='Note-hm'>" + data[i].content + "</div><h2 class='Note-hb'>FROM&nbsp;" + data[i].from + "</h2></div></div>");
     } else {
-      $('.bg').before("<div class='Note clearfix'><div class='fl'><div class='Note-photo'><img src='img/boy2.png' id='img_boy2'></div><div class='Note-tip'><span id='n-" + data[i].id + "'  onclick='javascript:nice(this);'>" + data[i].nice + "</span></div></div><div id='show' class='note-message'><h2 class='Note-ht'>TO&nbsp;" + data[i].to + "</h2><div disabled='disabled' class='Note-hm'>" + data[i].content + "</div><h2 class='Note-hb'>FROM&nbsp;" + data[i].from + "</h2></div></div>");
+      $('.loading').before("<div class='Note clearfix'><div class='fl'><div class='Note-photo'><img src='img/boy2.png' id='img_boy2'></div><div class='Note-tip'><span id='n-" + data[i].id + "'  onclick='javascript:nice(this);'>" + data[i].nice + "</span></div></div><div id='show' class='note-message'><h2 class='Note-ht'>TO&nbsp;" + data[i].to + "</h2><div disabled='disabled' class='Note-hm'>" + data[i].content + "</div><h2 class='Note-hb'>FROM&nbsp;" + data[i].from + "</h2></div></div>");
     }
     //$('#header').after("<div class='show'><p>"+data[i].content+"</p><span>"+data[i].from+"</span><span>"+data[i].to+"</span><button id='n-"+data[i].id+"' class='nice' type='button' onclick='nice(this)';>赞</button><span>"+data[i].nice+"</span></div>")
   }
@@ -225,7 +231,7 @@ function Dialog(dragId, moveId) {
     instace.mouseOffsetLeft = e.pageX - instace.moveElement.offsetLeft;
     instace.mouseOffsetTop = e.pageY - instace.moveElement.offsetTop;
     // instace.moveElement.style.zIndex = zIndex ++;
-  })
+  });
   return instace;
 }
 //  在页面中侦听 鼠标弹起事件
@@ -255,6 +261,7 @@ Dialog('dialogDrag', 'dialogMove');
 function onMoveStart() {}
 //  重新调整对话框的位置和遮罩，并且展现
 function showDialog() {
+  $('html,body').css("overflow","hidden");
   g('dialogMove').style.display = 'block';
   g('mask').style.display = 'block';
   autoCenter(g('dialogMove'));
@@ -264,6 +271,7 @@ function showDialog() {
 }
 //  关闭对话框
 function hideDialog() {
+  $('html,body').css("overflow","visible");
   g('dialogMove').style.display = 'none';
   g('mask').style.display = 'none';
 }
