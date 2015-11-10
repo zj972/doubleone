@@ -109,13 +109,8 @@ div .click {
   text-decoration: none
 }
 
-
-}
-
 .ui-dialog-content {
   padding: 0.75rem 0.5rem;
-  width: 19rem;
-  height: 33rem;
   overflow: hidden
 }
 
@@ -168,77 +163,6 @@ div .click {
   width: 70%;
 }
 
-.note {
-  background-color: #f6baae;
-  width: 90%;
-  height: 17.5rem;
-  min-height: 30%;
-  position: relative;
-  margin: 5% auto;
-  -webkit-box-shadow: 10px 10px 10px #c0c7b0;
-  -moz-box-shadow: 10px 10px 10px #c0c7b0;
-  -ms-box-shadow: 10px 10px 10px #c0c7b0;
-  -o-box-shadow: 10px 10px 10px #c0c7b0;
-  box-shadow: 10px 10px 10px #c0c7b0;
-  z-index: 2;
-}
-
-.note-photo {
-  position: absolute;
-  left: 1rem;
-  top: 1rem
-}
-
-.note-tip {
-  position: absolute;
-  left: 2%;
-  bottom: 2%
-}
-
-.note-tip > span {
-  position: absolute;
-  left: 42%;
-  bottom: 40%;
-}
-
-.note-ht {
-  position: absolute;
-  left:25%;
-}
-
-.note-hb {
-  position: absolute;
-  right: 4rem;
-  bottom: 0.5rem
-}
-
-.note-hm {
-  position: absolute;
-  left: 9rem;
-  top: 1.7rem;
-  width: 17.5rem;
-  height: 11rem;
-  text-align: left;
-  margin-top: 1rem;
-  padding-top: 0.5rem;
-  padding-right: 0.5rem;
-  background: rgba(255,255,255,0);
-  border: 0;
-  resize: none;
-  font-size: 2rem;
-  color:#a37434;
-}
-
-/*
-.note-hm>p {
-  overflow: hidden
-}
-*/
-/*img {
-  max-width: 100%;
-  height: auto;
-  width: auto
-}*/
 
 img#num {
   height: 4.2rem;
@@ -269,27 +193,6 @@ img#num {
   resize: none;
 }
 
-.note-tip {
-  width: 50px;
-  height: 44px;
-}
-
-.note-tip > span {
-  display: block;
-  width: 100%;
-  height: 100%;
-  line-height: 45px;
-  background: url(../img/boom.png) no-repeat;
-}
-
-.note-hm {
-  word-wrap: break-word;
-  word-break: normal;
-}
-
-.note-message{
-  line-height: 3em;
-}
 
 #img_one{
   width: 21.75px;
@@ -306,5 +209,74 @@ img#num {
   width: 100%;
   height: 100%;
   top: 200px;
-  z-index: 1;
+  z-index: -1;
+}
+.float strong{
+  font-size: 1.3rem;
+}
+.Note {
+  position: relative;
+  background-color: #f6baae;
+  width: 90%;
+  min-height: 30%;
+  margin: 5% auto;
+  -webkit-box-shadow: 10px 10px 10px #c0c7b0;
+  -moz-box-shadow: 10px 10px 10px #c0c7b0;
+  -ms-box-shadow: 10px 10px 10px #c0c7b0;
+  -o-box-shadow: 10px 10px 10px #c0c7b0;
+  box-shadow: 10px 10px 10px #c0c7b0;
+}
+.fl{
+  float: left;
+  width: 22%;
+}
+.Note-photo img{
+  display: block;
+  margin-left: 1rem;
+  margin-top: 1rem;
+}
+#show{
+  float: right;
+  width: 78%;
+}
+#show h2{
+  line-height: 3rem;
+}
+.Note-tip {
+  padding-top: 4rem;
+  padding-bottom: 1rem;
+}
+
+.Note-tip > span {
+  font-size: 2rem;
+  display: inline-block;
+  width: 50px;
+  line-height: 45px;
+  background: url(../img/boom.png) no-repeat;
+}
+/*清除浮动*/
+.clearfix:after{
+  content:"";
+  display:block;
+  clear:both;
+}
+.clearfix{
+  zoom:1;
+}
+.Note-ht {
+}
+.Note-ht,
+.Note-hb {
+  text-align: left;
+}
+
+.Note-hm {
+  min-height: 12rem;
+  margin: 0 auto;
+  height: auto;
+  width: 80%;
+  text-align: left;
+  font-size: 2rem;
+  color:#663333;
+  word-wrap:break-word;
 }
